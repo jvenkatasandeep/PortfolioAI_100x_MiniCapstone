@@ -1,0 +1,26 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="portfolioai-backend",
+    version="0.1.0",
+    packages=find_packages(include=['app', 'app.*']),
+    install_requires=[
+        "fastapi>=0.68.0",
+        "uvicorn>=0.15.0",
+        "python-jose[cryptography]>=3.3.0",
+        "passlib[bcrypt]>=1.7.4",
+        "python-multipart>=0.0.5",
+        "sqlalchemy>=1.4.0",
+        "pydantic>=1.8.0",
+        "python-dotenv>=0.19.0",
+        "httpx>=0.19.0",
+        "jinja2>=3.0.0",
+        "python-docx>=0.8.11",
+        "PyPDF2>=2.0.0"
+    ],
+    python_requires=">=3.8",
+    author="Your Name",
+    author_email="your.email@example.com",
+    description="Backend for PortfolioAI application",
+    url="https://github.com/yourusername/portfolioai",
+)

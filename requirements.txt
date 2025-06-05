@@ -1,0 +1,36 @@
+# Global requirements for PortfolioAI
+# This file is for development purposes only
+# For production, use the specific requirements in each service's directory
+
+# Backend Dependencies
+fastapi>=0.68.0
+uvicorn>=0.15.0
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.5
+sqlalchemy>=1.4.0
+pydantic>=1.8.0
+python-dotenv>=0.19.0
+httpx>=0.19.0
+jinja2>=3.0.0
+python-docx>=0.8.11
+PyPDF2>=2.0.0
+
+# Frontend Dependencies (Python packages only)
+streamlit>=1.10.0
+python-dotenv>=0.19.0
+requests>=2.26.0
+
+# Development Tools
+pytest>=6.0.0
+pytest-cov>=2.0.0
+black>=21.0
+isort>=5.0.0
+mypy>=0.900
+pre-commit>=2.15.0
+
+# Documentation
+mkdocs>=1.2.3
+mkdocs-material>=7.3.6
+
+# Note: For frontend JavaScript/Node.js dependencies, see frontend/package.json
