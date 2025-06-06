@@ -4,6 +4,7 @@ import io
 import asyncio
 import logging
 import requests
+from dotenv import load_dotenv
 from typing import Dict, Optional, List, Any, Tuple
 from pathlib import Path
 from PyPDF2 import PdfReader
@@ -11,8 +12,15 @@ import docx
 import pyperclip
 from components.header import show_header
 
+# Load environment variables from .env if available
+load_dotenv()
+
 # Backend API URL
-BACKEND_URL = "http://localhost:8000"  # Update this if your backend is running on a different port
+# Allow override via environment variable or Streamlit secrets
+BACKEND_URL = os.environ.get(
+    "BACKEND_URL",
+    st.secrets.get("BACKEND_URL", "http://localhost:8000") if hasattr(st, "secrets") else "http://localhost:8000",
+)
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)

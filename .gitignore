@@ -50,6 +50,8 @@ logs/
 
 # Streamlit
 .streamlit/
+!.streamlit/
+!.streamlit/config.toml
 
 # Jupyter Notebook
 .ipynb_checkpoints/
