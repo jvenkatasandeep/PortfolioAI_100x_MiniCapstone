@@ -6,12 +6,20 @@ import logging
 import streamlit as st
 from typing import Optional, Dict, Any
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables from a .env file if present
+load_dotenv()
 
 # Set up logging
 logger = logging.getLogger(__name__)
 
 # Backend API configuration
-BACKEND_URL = "http://localhost:8000"  # Update this in production to your backend URL
+# Allow overriding via environment variable or Streamlit secrets
+BACKEND_URL = os.environ.get(
+    "BACKEND_URL",
+    st.secrets.get("BACKEND_URL", "http://localhost:8000") if hasattr(st, "secrets") else "http://localhost:8000",
+)
 
 class APIService:
     """Service class to handle all API calls to the backend."""

@@ -61,7 +61,7 @@ PortfolioAI/
    # Update the variables in both .env files with your configuration
    ```
 
-5. **Run the application**
+5. **Run the application locally**
    - Start the backend:
      ```bash
      cd backend
@@ -73,6 +73,13 @@ PortfolioAI/
      streamlit run app.py
      ```
    - The application should now be running at `http://localhost:8501`
+
+### Deploying on Streamlit Cloud
+
+1. Ensure all dependencies are listed in `requirements.txt`.
+2. Set the `BACKEND_URL` environment variable in **Secrets** if you have a remote backend.
+   Alternatively set `START_BACKEND` to `true` to launch the FastAPI server alongside Streamlit.
+3. Point Streamlit to run `streamlit_app.py` at the repository root.
 
 ## 📚 Documentation
 
